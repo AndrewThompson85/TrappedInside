@@ -13,6 +13,6 @@ public enum CharacterId
 
 public abstract record Character(CharacterId Id, RoomIdentifier Location);
 
-public sealed record AliveCharacter(CharacterId Id, Condition Condition, RoomIdentifier Location) : Character(Id, Location);
+public sealed record AliveCharacter(CharacterId Id, Condition Condition, RoomIdentifier Location, Inventory Inventory) : Character(Id, Location);
 
 

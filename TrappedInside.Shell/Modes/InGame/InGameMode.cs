@@ -1,6 +1,7 @@
 using TrappedInside.Core;
 using TrappedInside.Core.Characters;
 using TrappedInside.Core.States;
+using TrappedInside.Core.States.SelectingCharacter;
 using TrappedInside.Shell.ShellFunctions;
 
 namespace TrappedInside.Shell.Modes.InGame;

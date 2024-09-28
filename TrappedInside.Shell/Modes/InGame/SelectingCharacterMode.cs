@@ -1,6 +1,7 @@
+using Spectre.Console;
 using TrappedInside.Core;
-using TrappedInside.Core.States;
-using static TrappedInside.Shell.ShellFunctions.BasicShellFunctions;
+using TrappedInside.Core.Characters;
+using TrappedInside.Core.States.SelectingCharacter;
 
 namespace TrappedInside.Shell.Modes.InGame;
 
@@ -8,13 +9,12 @@ public sealed class SelectingCharacterMode(SelectingCharacterState State) : Mode
 {
 	public override Mode Run()
 	{
-		WriteLine("Selecting character state");
-		foreach (var character in State.AvailableChoices)
-		{
-			WriteLine(character.Name());
-		}
+		var selectedCharacter = AnsiConsole.Prompt(new SelectionPrompt<CharacterId>()
+			.Title("Which Character do you want to play next?")
+			.PageSize(4)
+			.AddChoices(State.CharactersAvailableForSelection())
+			.UseConverter(c => c.Name()));
 		
-		PromptForKey();
-		return this;
+		return new SelectingCharacterMode(State.MarkAsPlayed(selectedCharacter));
 	}
 }

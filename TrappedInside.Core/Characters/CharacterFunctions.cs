@@ -10,6 +10,8 @@ public static class CharacterFunctions
 
 	public static ImmutableArray<CharacterId> Ids(this ImmutableArray<AliveCharacter> characters) =>
 		[..characters.Select(c => c.Id)];
+
+	public static readonly ImmutableArray<CharacterId> AllCharacters = [..Enum.GetValues<CharacterId>()];
 	
 	public static Text Name(this Character character) => character.Id.Name();
 }

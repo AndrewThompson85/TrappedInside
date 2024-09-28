@@ -18,6 +18,7 @@ public sealed record Text
 		value = this.Value;
 	}
 
-	public static implicit operator Text(string value) => new Text(value);
-	
+	public static implicit operator Text(string value) => new(value);
+	public static implicit operator string(Text text) => text.Value;
+
 }

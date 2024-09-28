@@ -12,7 +12,6 @@ public sealed class ChoosingCharacterActionMode(CharacterActionState State, Sele
 {
 	public override Mode Run()
 	{
-		BasicShellFunctions.ClearScreen();
 		BasicShellFunctions.WriteLine($"You are in {State.Location()}, and you have {State.RemainingActions} actions remaining.");
 
 		var actions = State.GetAllAvailableActions();
@@ -47,14 +46,12 @@ public sealed class ChoosingCharacterActionMode(CharacterActionState State, Sele
 			}
 		}
 		
-		BasicShellFunctions.PromptForKey();
 		
 		if (nextState.RemainingActions > 0)
 		{
 			return new ChoosingCharacterActionMode(nextState, SelectNextCharacters);
 		}
 		
-		BasicShellFunctions.PromptForKey();
 		return new SelectingCharacterMode(SelectNextCharacters with { Data = State.Data });
 	}
 }

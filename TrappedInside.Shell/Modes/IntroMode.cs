@@ -1,3 +1,4 @@
+using TrappedInside.Core;
 using static TrappedInside.Shell.ShellFunctions.BasicShellFunctions;
 using static TrappedInside.Shell.Widgets.IntroWidget;
 
@@ -11,6 +12,6 @@ public sealed class IntroMode : Mode
 		DrawGameTitle();
 		DrawGameCredits();
 		PromptForKey(PushKeyWhitespace);
-		return new CloseApplicationMode();
+		return new InGameMode(Invariants.InitialState);
 	}
 }

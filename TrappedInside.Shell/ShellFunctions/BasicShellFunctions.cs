@@ -5,15 +5,19 @@ namespace TrappedInside.Shell.ShellFunctions;
 public static class BasicShellFunctions
 {
 	public static void ClearScreen() => AnsiConsole.Clear();
-	public static void WriteLine(string value) => AnsiConsole.WriteLine(value);
+	public static void WriteLine(TrappedInside.Core.Primitives.Text value) => AnsiConsole.WriteLine(value.Value);
 
+	public static void BlankLines(uint amount = 0)
+	{
+		for (var x = 0; x < amount; x++)
+		{
+			AnsiConsole.WriteLine(string.Empty);
+		}
+	}
 
 	public static void PromptForKey(uint whitespace = 0)
 	{
-		for (var x = 0; x < whitespace; x++)
-		{
-			WriteLine(string.Empty);
-		}
+		BlankLines(whitespace);
 		DrawRule("Push any key to continue", ViewInvariants.PromptColor);
 		Console.ReadKey(true);
 	}

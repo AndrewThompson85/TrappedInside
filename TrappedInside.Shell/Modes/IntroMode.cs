@@ -11,7 +11,9 @@ public sealed class IntroMode : Mode
 	public override Mode Run()
 	{
 		ClearScreen();
+		BlankLines(1);
 		DrawGameTitle();
+		BlankLines(1);
 		DrawGameCredits();
 		PromptForKey(PushKeyWhitespace);
 		return new InGameMode(new NewTurnState(StartingGameData.InitialData));

@@ -3,7 +3,7 @@ using TrappedInside.Core.Data;
 
 namespace TrappedInside.Core.States.CharacterActions;
 
-public record CharacterActionState(GameData Data, CharacterId Character, uint RemainingActions) : State(Data)
+public sealed record CharacterActionState(GameData Data, CharacterId Character, uint RemainingActions) : State(Data)
 {
 	public static CharacterActionState New(GameData data, CharacterId character) =>
 		new(data, character, Invariants.ActionsPerTurn);

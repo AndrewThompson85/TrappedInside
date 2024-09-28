@@ -4,6 +4,7 @@ using TrappedInside.Core.Information;
 using TrappedInside.Core.States.CharacterActions;
 using TrappedInside.Core.States.SelectingCharacter;
 using TrappedInside.Shell.ShellFunctions;
+using TrappedInside.Shell.Widgets;
 
 namespace TrappedInside.Shell.Modes.InGame;
 
@@ -39,6 +40,9 @@ public sealed class ChoosingCharacterActionMode(CharacterActionState State, Sele
 			{
 				case BasicMessage basicMessage:
 					BasicShellFunctions.WriteLine(basicMessage.Message);
+					break;
+				case InventoryListing inventoryListing:
+					InventoryWidget.DrawInventoryWidget(inventoryListing.inventory);
 					break;
 			}
 		}

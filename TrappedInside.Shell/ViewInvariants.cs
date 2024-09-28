@@ -9,4 +9,5 @@ public static class ViewInvariants
 	public static readonly Color TitleColor = Color.Red1;
 	public static readonly Color CreditsLineColor = Color.Aqua;
 	public static readonly Color PromptColor = Color.Gold3;
+	public static readonly Color InfoRowColor = Color.Cyan3;
 }

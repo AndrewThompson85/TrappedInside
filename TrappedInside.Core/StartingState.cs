@@ -15,7 +15,9 @@ public static class StartingGameData
 			new AliveCharacter(Sandra, Condition.Healthy, DiningRoom ),
 			new AliveCharacter(Bill, Condition.Healthy, Kitchen),
 			new AliveCharacter(Olivia, Condition.Healthy, DiningRoom)
-		], Map
+		], 
+		Map,
+		1
 	);
 
 	public static readonly Map Map = new(Rooms, Connections);

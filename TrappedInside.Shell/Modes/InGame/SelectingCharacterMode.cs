@@ -10,17 +10,24 @@ public sealed class SelectingCharacterMode(SelectingCharacterState State) : Mode
 {
 	public override Mode Run()
 	{
-		var selectedCharacter = SelectCharacterWidget();
-		
-		return new ChoosingCharacterActionMode(CharacterActionState.New(State.Data, selectedCharacter), State.MarkAsPlayed(selectedCharacter));
+		switch (State)
+		{
+			case CharactersAvailableState charactersAvailableState:
+				var selectedCharacter = SelectCharacterWidget(charactersAvailableState);
+				return new ChoosingCharacterActionMode(CharacterActionState.New(State.Data, selectedCharacter), charactersAvailableState.MarkAsPlayed(selectedCharacter));
+			case NoCharactersAvailableState noCharactersAvailable:
+				return new EndOfTurnMode(noCharactersAvailable.Data);
+			default:
+				throw new ArgumentOutOfRangeException(nameof(State));
+		}
 	}
 
-	private CharacterId SelectCharacterWidget()
+	private static CharacterId SelectCharacterWidget(CharactersAvailableState charactersAvailableState)
 	{
 		return AnsiConsole.Prompt(new SelectionPrompt<CharacterId>()
 			.Title("Which Character do you want to play next?")
 			.PageSize(4)
-			.AddChoices(State.CharactersAvailableForSelection())
+			.AddChoices(charactersAvailableState.CharactersAvailableForSelection())
 			.UseConverter(c => c.Name()));
 	}
 }

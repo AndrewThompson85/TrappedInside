@@ -4,4 +4,6 @@ using TrappedInside.Core.Data;
 
 namespace TrappedInside.Core.States.SelectingCharacter;
 
-public sealed record SelectingCharacterState(GameData Data, ImmutableHashSet<CharacterId> PlayedCharacters) : State(Data);
+public abstract record SelectingCharacterState(GameData Data) : State(Data);
+public sealed record CharactersAvailableState(GameData Data, ImmutableHashSet<CharacterId> PlayedCharacters) : SelectingCharacterState(Data);
+public sealed record NoCharactersAvailableState(GameData Data) : SelectingCharacterState(Data);

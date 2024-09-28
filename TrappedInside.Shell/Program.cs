@@ -1,10 +1,22 @@
-﻿namespace TrappedInside.Shell;
+﻿using TrappedInside.Shell.Modes;
+
+namespace TrappedInside.Shell;
 
 internal class Program
 {
 	private static void Main()
 	{
-		Console.Clear();
-		Console.WriteLine("Trapped Inside");
+		Mode mode = new IntroMode();
+
+		while (true)
+		{
+			mode = mode.Run();
+
+			if (mode is CloseApplicationMode closeApplicationMode)
+			{
+				closeApplicationMode.Run();
+				return;
+			}
+		}
 	}
 }

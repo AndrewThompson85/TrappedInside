@@ -15,7 +15,7 @@ public sealed class InGameMode : Mode
 
 	public override Mode Run()
 	{
-		foreach (var character in State.Characters.Where(c => c is AliveCharacter))
+		foreach (var character in State.AliveCharacters())
 		{
 			BasicShellFunctions.WriteLine(character.Name);
 		}

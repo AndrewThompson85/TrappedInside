@@ -2,4 +2,16 @@ using TrappedInside.Core.Primitives;
 
 namespace TrappedInside.Core.Environment;
 
-public record Room(Guid Id, Text Name);
+public enum RoomIdentifier
+{
+	MasterBedroom,
+	HallWay,
+	GuestBedroom,
+	Bathroom,
+	LivingRoom,
+	DiningRoom,
+	Kitchen,
+	Study
+}
+
+public sealed record Room(RoomIdentifier Id, Text Name);

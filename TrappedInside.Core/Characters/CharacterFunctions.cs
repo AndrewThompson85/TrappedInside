@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using TrappedInside.Core.Data;
 using TrappedInside.Core.Primitives;
 
 namespace TrappedInside.Core.Characters;

@@ -1,6 +1,7 @@
 using Spectre.Console;
 using TrappedInside.Core;
 using TrappedInside.Core.Characters;
+using TrappedInside.Core.States.CharacterActions;
 using TrappedInside.Core.States.SelectingCharacter;
 
 namespace TrappedInside.Shell.Modes.InGame;
@@ -11,7 +12,7 @@ public sealed class SelectingCharacterMode(SelectingCharacterState State) : Mode
 	{
 		var selectedCharacter = SelectCharacterWidget();
 		
-		return new SelectingCharacterMode(State.MarkAsPlayed(selectedCharacter));
+		return new ChoosingCharacterActionMode(CharacterActionState.New(State.Data, selectedCharacter), State.MarkAsPlayed(selectedCharacter));
 	}
 
 	private CharacterId SelectCharacterWidget()

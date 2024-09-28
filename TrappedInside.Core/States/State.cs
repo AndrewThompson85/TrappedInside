@@ -1,3 +1,5 @@
+using TrappedInside.Core.Data;
+
 namespace TrappedInside.Core.States;
 
 public abstract record State(GameData Data);

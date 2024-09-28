@@ -6,6 +6,7 @@ namespace TrappedInside.Core;
 
 public static class Invariants
 {
+	public const uint ActionsPerTurn = 3;
 	
 	public static Text Name(this CharacterId character) => character switch
 	{

@@ -1,5 +1,6 @@
 using System.Collections.Immutable;
 using TrappedInside.Core.Characters;
+using TrappedInside.Core.Data;
 using TrappedInside.Core.Environment;
 using static TrappedInside.Core.Characters.CharacterId;
 using static TrappedInside.Core.Environment.RoomIdentifier;

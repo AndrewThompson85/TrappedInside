@@ -11,8 +11,8 @@ public enum CharacterId
 	Olivia
 }
 
-public abstract record Character(CharacterId Id);
+public abstract record Character(CharacterId Id, RoomIdentifier Location);
 
-public sealed record AliveCharacter(CharacterId Id, Condition Condition, RoomIdentifier Location) : Character(Id);
+public sealed record AliveCharacter(CharacterId Id, Condition Condition, RoomIdentifier Location) : Character(Id, Location);
 
 

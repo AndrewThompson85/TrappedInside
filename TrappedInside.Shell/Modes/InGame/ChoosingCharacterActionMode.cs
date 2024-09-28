@@ -16,12 +16,20 @@ public sealed class ChoosingCharacterActionMode(CharacterActionState State, Sele
 
 		var actions = State.GetAllAvailableActions();
 
-		var chosenAction = AnsiConsole.Prompt(
-			new SelectionPrompt<CharacterAction>()
-				.Title("What do you want to do next?")
-				.PageSize(10)
-				.AddChoices(actions)
-				.UseConverter(a => a.Description));
+		var groups = actions.GroupBy(a => a.Category);
+
+		var actionMenu = new SelectionPrompt<CharacterAction>()
+			.Title("What do you want to do next?")
+			.PageSize(10)
+			.UseConverter(a => a.Description);
+
+		foreach (var group in groups)
+		{
+			actionMenu.AddChoiceGroup(new CharacterAction(group.Key, a => a, group.Key.ToString(), []),group).UseConverter(g => g.Description);
+		}
+			
+		
+		var chosenAction = AnsiConsole.Prompt(actionMenu);
 
 		var nextState = chosenAction.Function(State);
 

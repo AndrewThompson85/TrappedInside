@@ -12,6 +12,6 @@ public sealed class IntroMode : Mode
 		DrawGameTitle();
 		DrawGameCredits();
 		PromptForKey(PushKeyWhitespace);
-		return new InGameMode(Invariants.InitialState);
+		return new InGameMode(StartingState.InitialState);
 	}
 }

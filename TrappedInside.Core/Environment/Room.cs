@@ -1,4 +1,4 @@
-using TrappedInside.Core.Primitives;
+using System.Collections.Immutable;
 
 namespace TrappedInside.Core.Environment;
 
@@ -14,4 +14,6 @@ public enum RoomIdentifier
 	Study
 }
 
-public sealed record Room(RoomIdentifier Id, Text Name);
+public sealed record Room;
+
+public sealed record Map(ImmutableDictionary<RoomIdentifier, Room> Rooms, ImmutableArray<RoomConnection> Connections);

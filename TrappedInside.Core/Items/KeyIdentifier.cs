@@ -1,6 +1,6 @@
 namespace TrappedInside.Core.Items;
 
-public enum KeyIdentifier
+public enum Key
 {
 	MasterBedroomKey,
 }

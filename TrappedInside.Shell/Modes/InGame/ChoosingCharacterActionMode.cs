@@ -35,6 +35,8 @@ public sealed class ChoosingCharacterActionMode(CharacterActionState State, Sele
 			}
 		}
 		
+		BasicShellFunctions.PromptForKey();
+		
 		if (nextState.RemainingActions > 0)
 		{
 			return new ChoosingCharacterActionMode(nextState, SelectNextCharacters);

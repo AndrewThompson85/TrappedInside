@@ -1,6 +1,6 @@
 namespace TrappedInside.Core.Items;
 
-public enum CarryableItemIdentifier
+public enum Carryable
 {
 	Pickaxe,
 	Shotgun

@@ -8,4 +8,4 @@ public sealed record OpenPassage(RoomIdentifier Left, RoomIdentifier Right) : Ro
 
 public abstract record BlockedPassage(RoomIdentifier Left, RoomIdentifier Right) : RoomConnection(Left, Right);
 
-public abstract record LockedDoor(RoomIdentifier Left, RoomIdentifier Right, KeyIdentifier RequiredKey);
+public abstract record LockedDoor(RoomIdentifier Left, RoomIdentifier Right, Key RequiredKey);

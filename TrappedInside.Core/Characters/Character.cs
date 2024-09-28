@@ -1,4 +1,5 @@
 using TrappedInside.Core.Environment;
+using TrappedInside.Core.Items;
 using TrappedInside.Core.Primitives;
 
 namespace TrappedInside.Core.Characters;

@@ -24,6 +24,6 @@ public static class BasicQueryProvider
 		var inventory = alive.Inventory;
 
 		return new CharacterAction(ActionCategory.Query, a => a, "Inventory",
-			[..inventory.Items.Select(i => new BasicMessage(i.Identifier.ToString()))]);
+			[..inventory.Carryables.Select(i => new BasicMessage(i.ToString())), ..inventory.Keys.Select(i => new BasicMessage(i.ToString()))]);
 	}
 }

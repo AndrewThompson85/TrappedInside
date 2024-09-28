@@ -5,12 +5,13 @@ namespace TrappedInside.Core;
 
 public static class Invariants
 {
+	
 	public static readonly GameState InitialState = new(
 		[
-			new AliveCharacter("Alex", new Healthy(), MasterBedroom ),
-			new AliveCharacter("Sandra", new Healthy(), DiningRoom ),
-			new AliveCharacter("Bill", new Healthy(), Kitchen),
-			new AliveCharacter("Olivia", new Healthy(), DiningRoom)
+			new AliveCharacter("Alex", Condition.Healthy , MasterBedroom ),
+			new AliveCharacter("Sandra", Condition.Healthy, DiningRoom ),
+			new AliveCharacter("Bill", Condition.Healthy, Kitchen),
+			new AliveCharacter("Olivia", Condition.Healthy, DiningRoom)
 		]
 	);
 }

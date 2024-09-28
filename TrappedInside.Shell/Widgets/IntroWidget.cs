@@ -7,9 +7,9 @@ namespace TrappedInside.Shell.Widgets;
 public static class IntroWidget
 {
 	public static void DrawGameTitle() =>
-		AnsiConsole.Write(new FigletText(GameTitle).Centered().Color(TitleColor));
+		AnsiConsole.Write(new FigletText(GameTitle.Value).Centered().Color(TitleColor));
 
-	public static void DrawGameCredits() => BasicShellFunctions.DrawRule(CreditsLine, CreditsLineColor);
+	public static void DrawGameCredits() => BasicShellFunctions.DrawRule(CreditsLine.Value, CreditsLineColor);
 
-	public static uint PushKeyWhitespace = 2;
+	public const uint PushKeyWhitespace = 2;
 }

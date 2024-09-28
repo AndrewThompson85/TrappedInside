@@ -10,4 +10,6 @@ public static class IntroWidget
 		AnsiConsole.Write(new FigletText(GameTitle).Centered().Color(TitleColor));
 
 	public static void DrawGameCredits() => BasicShellFunctions.DrawRule(CreditsLine, CreditsLineColor);
+
+	public static uint PushKeyWhitespace = 2;
 }

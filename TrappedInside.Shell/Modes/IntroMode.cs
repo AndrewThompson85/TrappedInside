@@ -1,5 +1,5 @@
-using TrappedInside.Shell.Widgets;
 using static TrappedInside.Shell.ShellFunctions.BasicShellFunctions;
+using static TrappedInside.Shell.Widgets.IntroWidget;
 
 namespace TrappedInside.Shell.Modes;
 
@@ -8,8 +8,9 @@ public sealed class IntroMode : Mode
 	public override Mode Run()
 	{
 		ClearScreen();
-		IntroWidget.DrawGameTitle();
-		IntroWidget.DrawGameCredits();
+		DrawGameTitle();
+		DrawGameCredits();
+		PromptForKey(PushKeyWhitespace);
 		return new CloseApplicationMode();
 	}
 }

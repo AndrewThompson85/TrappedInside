@@ -1,4 +1,5 @@
 using TrappedInside.Core;
+using TrappedInside.Shell.Modes.InGame;
 using static TrappedInside.Shell.ShellFunctions.BasicShellFunctions;
 using static TrappedInside.Shell.Widgets.IntroWidget;
 

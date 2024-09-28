@@ -2,17 +2,10 @@ using TrappedInside.Core;
 using TrappedInside.Core.Characters;
 using TrappedInside.Shell.ShellFunctions;
 
-namespace TrappedInside.Shell.Modes;
+namespace TrappedInside.Shell.Modes.InGame;
 
-public sealed class InGameMode : Mode
+public sealed class InGameMode(GameState State) : Mode
 {
-	public readonly GameState State;
-
-	public InGameMode(GameState state)
-	{
-		State = state;
-	}
-
 	public override Mode Run()
 	{
 		foreach (var character in State.AliveCharacters())

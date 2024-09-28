@@ -11,7 +11,8 @@ public enum RoomIdentifier
 	LivingRoom,
 	DiningRoom,
 	Kitchen,
-	Study
+	Study,
+	Garage
 }
 
 public sealed record Room;

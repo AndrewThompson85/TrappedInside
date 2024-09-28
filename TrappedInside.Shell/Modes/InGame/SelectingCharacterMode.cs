@@ -9,12 +9,17 @@ public sealed class SelectingCharacterMode(SelectingCharacterState State) : Mode
 {
 	public override Mode Run()
 	{
-		var selectedCharacter = AnsiConsole.Prompt(new SelectionPrompt<CharacterId>()
+		var selectedCharacter = SelectCharacterWidget();
+		
+		return new SelectingCharacterMode(State.MarkAsPlayed(selectedCharacter));
+	}
+
+	private CharacterId SelectCharacterWidget()
+	{
+		return AnsiConsole.Prompt(new SelectionPrompt<CharacterId>()
 			.Title("Which Character do you want to play next?")
 			.PageSize(4)
 			.AddChoices(State.CharactersAvailableForSelection())
 			.UseConverter(c => c.Name()));
-		
-		return new SelectingCharacterMode(State.MarkAsPlayed(selectedCharacter));
 	}
 }

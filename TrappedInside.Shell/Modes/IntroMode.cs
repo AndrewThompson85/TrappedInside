@@ -1,4 +1,5 @@
 using TrappedInside.Core;
+using TrappedInside.Core.States;
 using TrappedInside.Shell.Modes.InGame;
 using static TrappedInside.Shell.ShellFunctions.BasicShellFunctions;
 using static TrappedInside.Shell.Widgets.IntroWidget;
@@ -13,6 +14,6 @@ public sealed class IntroMode : Mode
 		DrawGameTitle();
 		DrawGameCredits();
 		PromptForKey(PushKeyWhitespace);
-		return new InGameMode(StartingState.InitialState);
+		return new InGameMode(new NewTurnState(StartingGameData.InitialData));
 	}
 }

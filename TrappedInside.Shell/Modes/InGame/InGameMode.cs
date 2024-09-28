@@ -1,19 +1,26 @@
 using TrappedInside.Core;
 using TrappedInside.Core.Characters;
+using TrappedInside.Core.States;
 using TrappedInside.Shell.ShellFunctions;
 
 namespace TrappedInside.Shell.Modes.InGame;
 
-public sealed class InGameMode(GameState State) : Mode
+public sealed class InGameMode : Mode
 {
+	public State State;
+
+	public InGameMode(NewTurnState state)
+	{
+		State = state;
+	}
+
 	public override Mode Run()
 	{
-		foreach (var character in State.AliveCharacters())
+		return State switch
 		{
-			BasicShellFunctions.WriteLine(character.Name);
-		}
-
-		BasicShellFunctions.PromptForKey();
-		return this;
+			NewTurnState newTurnState => new NewTurnMode(newTurnState),
+			SelectingCharacterState selectingCharacterState => new SelectingCharacterMode(selectingCharacterState),
+			_ => throw new ArgumentOutOfRangeException(nameof(State))
+		};
 	}
 }

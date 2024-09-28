@@ -4,6 +4,6 @@ using TrappedInside.Core.Environment;
 
 namespace TrappedInside.Core;
 
-public sealed record GameState(ImmutableArray<Character> Characters, Map Map);
+public sealed record GameData(ImmutableArray<Character> Characters, Map Map);
 
 

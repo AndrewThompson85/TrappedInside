@@ -3,8 +3,16 @@ using TrappedInside.Core.Primitives;
 
 namespace TrappedInside.Core.Characters;
 
-public abstract record Character(Text Name);
+public enum CharacterId
+{
+	Alex,
+	Sandra,
+	Bill,
+	Olivia
+}
 
-public sealed record AliveCharacter(Text Name, Condition Condition, RoomIdentifier Location) : Character(Name);
+public abstract record Character(CharacterId Id);
+
+public sealed record AliveCharacter(CharacterId Id, Condition Condition, RoomIdentifier Location) : Character(Id);
 
 

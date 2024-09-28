@@ -1,8 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrappedInside.Shell", "TrappedInside.Shell\TrappedInside.Shell.csproj", "{A1DA54FA-136F-41F6-B145-26F14BEADD0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrappedInside.Core", "TrappedInside.Core\TrappedInside.Core.csproj", "{6C8FADDE-AD64-43B2-B3CB-3A10B571DCA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1DA54FA-136F-41F6-B145-26F14BEADD0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1DA54FA-136F-41F6-B145-26F14BEADD0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1DA54FA-136F-41F6-B145-26F14BEADD0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1DA54FA-136F-41F6-B145-26F14BEADD0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C8FADDE-AD64-43B2-B3CB-3A10B571DCA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C8FADDE-AD64-43B2-B3CB-3A10B571DCA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C8FADDE-AD64-43B2-B3CB-3A10B571DCA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C8FADDE-AD64-43B2-B3CB-3A10B571DCA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
